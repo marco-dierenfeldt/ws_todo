@@ -1,0 +1,8 @@
+ul.todo-list {
+  list-style-type: none;
+}
+
+tr.done td {
+  color: darkgrey;
+  text-decoration: dashed;
+}

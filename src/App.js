@@ -1,4 +1,5 @@
 import './App.css';
+import TodoList from './components/TodoList.component';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <div className="column"></div>
 
         <div className="column is-one-third content">
-          Hier wird unsere TodoList landen
+          <TodoList/>
         </div>
         <div className="column"></div>
       </div>
