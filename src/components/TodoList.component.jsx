@@ -14,7 +14,7 @@ class TodoList extends Component {
     componentDidMount = () => {
         var todoList = TodoListService.getTodoList();
         this.setState(todoList);
-        console.log('todoList: ' + todoList.title);
+        //console.log('todoList: ' + todoList.title);
     }
 
     render() {
@@ -24,7 +24,7 @@ class TodoList extends Component {
                 <table className="is-striped">
                     <tbody>
                     {this.state.todos.map((todo,idx)=>{
-                        console.log('todo: '+todo.text+' done: '+todo.done);
+                        //console.log('todo: '+todo.text+' done: '+todo.done);
                         return todo.done ? 
                             <tr key={idx} className="done"><td>{todo.text}</td><td>&#9989;</td></tr> :
                             <tr key={idx} ><td>{todo.text}</td><td><button className="button is-info">erledigt</button></td></tr>
