@@ -1,5 +1,5 @@
 import './App.css';
-import TodoListEdit from './components/TodoListEdit.component';
+import MainView from './components/MainView.component';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <div className="column"></div>
 
         <div className="column is-one-third content">
-          <TodoListEdit/>
+          <MainView/>
         </div>
         <div className="column"></div>
       </div>

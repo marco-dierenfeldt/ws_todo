@@ -2,8 +2,8 @@ import { Component } from "react";
 import TodoListService from "../service/TodoList.service";
 
 class TodoListEdit extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             title: '',
@@ -65,11 +65,13 @@ class TodoListEdit extends Component {
             todos:this.state.todos
         }
         TodoListService.saveTodoList(todoList);
+        this.props.showListView();
     }
 
     render = () => {
         return (
             <div>
+                <div className="box">
                 <h2>Todo List Bearbeiten</h2>
                 <div className="field">
                     <label className="label">Listen Titel</label>
@@ -114,7 +116,9 @@ class TodoListEdit extends Component {
                             onClick={this.addNewTodo}>&#10010;</button>
                     </div>
                 </div>
+                </div>
                 <button className="button is-info" onClick={this.saveTodoList}>Speichern</button>
+                <button className="button is-danger ml-2" onClick={this.props.showListView}>Abbrechen</button>
             </div>
         )
     }
