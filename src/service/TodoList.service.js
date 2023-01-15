@@ -18,6 +18,10 @@ class TodoListService {
     setTodoDone(index) {
         this.todoList.todos[index].done=true;
     }
+
+    saveTodoList(todoList) {
+        this.todoList = todoList;
+    }
 }
 
 export default new TodoListService();
