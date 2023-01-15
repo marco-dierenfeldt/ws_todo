@@ -16,4 +16,4 @@ class TodoListService {
     }
 }
 
-export default TodoListService();
+export default new TodoListService();
