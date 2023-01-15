@@ -1,24 +1,22 @@
 import { Component } from "react";
+import TodoListService from "../service/TodoList.service";
 import './TodoList.component.css';
 
 class TodoList extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            title:'Programmieren lernen',
-            todos:[
-                {text:'IDE installieren',done:true},
-                {text:'Node installieren',done:true},
-                {text:'Start Quellcode kopieren',done:true},
-                {text:'Erste Komponente einbinden',done:true},
-                {text:'Komponente ändern',done:false},
-                {text:'Arbeiten mit state',done:false},
-                {text:'Arbeiten mit service',done:false},
-                {text:'Kommunikation mit Properties',done:false},
-            ]
+            title: '',
+            todos: []
         }
     }
-    
+
+    componentDidMount = () => {
+        var todoList = TodoListService.getTodoList();
+        this.setState(todoList);
+        console.log('todoList: ' + todoList.title);
+    }
+
     render() {
         return (
             <div className="box">
