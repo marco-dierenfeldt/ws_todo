@@ -12,9 +12,19 @@ class TodoList extends Component {
     }
 
     componentDidMount = () => {
+        this.init();
+    }
+
+    init = () => {
         var todoList = TodoListService.getTodoList();
         this.setState(todoList);
         //console.log('todoList: ' + todoList.title);
+    }
+
+    resolveTodo = (index) => {
+        console.log(index);
+        TodoListService.setTodoDone(index);
+        this.init();
     }
 
     render() {
@@ -27,7 +37,7 @@ class TodoList extends Component {
                         //console.log('todo: '+todo.text+' done: '+todo.done);
                         return todo.done ? 
                             <tr key={idx} className="done"><td>{todo.text}</td><td>&#9989;</td></tr> :
-                            <tr key={idx} ><td>{todo.text}</td><td><button className="button is-info">erledigt</button></td></tr>
+                            <tr key={idx} ><td>{todo.text}</td><td><button onClick={() => this.resolveTodo(idx)} className="button is-info">erledigt</button></td></tr>
                     })}
                     </tbody>
                 </table>
