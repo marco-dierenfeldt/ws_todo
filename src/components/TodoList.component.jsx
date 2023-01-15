@@ -23,11 +23,11 @@ class TodoList extends Component {
                 <h2>{this.state.title}</h2>
                 <table className="is-striped">
                     <tbody>
-                    {this.state.todos.map((todo)=>{
+                    {this.state.todos.map((todo,idx)=>{
                         console.log('todo: '+todo.text+' done: '+todo.done);
                         return todo.done ? 
-                            <tr className="done"><td>{todo.text}</td><td>&#9989;</td></tr> :
-                            <tr><td>{todo.text}</td><td><button className="button is-info">erledigt</button></td></tr>
+                            <tr key={idx} className="done"><td>{todo.text}</td><td>&#9989;</td></tr> :
+                            <tr key={idx} ><td>{todo.text}</td><td><button className="button is-info">erledigt</button></td></tr>
                     })}
                     </tbody>
                 </table>
